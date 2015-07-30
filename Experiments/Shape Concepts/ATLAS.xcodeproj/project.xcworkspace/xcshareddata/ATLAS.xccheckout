@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BF4DA6BE-697F-435F-B681-BA696E02123F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ATLAS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC8576ECFA2ECE8B186E47D0B7CD0F647B40085F</key>
+		<string>https://github.com/Runemark/ATLAS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ATLAS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC8576ECFA2ECE8B186E47D0B7CD0F647B40085F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Runemark/ATLAS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC8576ECFA2ECE8B186E47D0B7CD0F647B40085F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC8576ECFA2ECE8B186E47D0B7CD0F647B40085F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ATLAS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
