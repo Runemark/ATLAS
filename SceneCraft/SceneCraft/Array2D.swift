@@ -10,11 +10,19 @@ public class Array2D<T>
     var yMax:Int = 0
     var matrix:[T]
     
+    var fillerValue:T
+    
+    convenience init(filler:T)
+    {
+        self.init(x:0, y:0, filler:filler)
+    }
+    
     // max x (rows), max y (cols)
     init(x:Int, y:Int, filler:T) {
         
         self.xMax = x
         self.yMax = y
+        self.fillerValue = filler
         matrix = Array<T>(count:xMax*yMax, repeatedValue:filler)
     }
     
