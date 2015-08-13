@@ -123,3 +123,49 @@ func mapToString(map:TileMap) -> String
     
     return string
 }
+
+func writeTileMap(map:TileMap)
+{
+    let userDocumentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+    
+    let filePath = userDocumentsPath.stringByAppendingPathComponent(map.title).stringByAppendingPathExtension("map")!
+    let fileContents = mapToString(map)
+    
+    do
+    {
+        try fileContents.writeToFile(filePath, atomically:true, encoding:NSUTF8StringEncoding)
+    }
+    catch
+    {
+        
+    }
+}
+
+func readTileMap(title:String) -> TileMap?
+{
+    let userDocumentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+    
+    var mapRepresentation:TileMap?
+    
+    if let filePath = userDocumentsPath.stringByAppendingPathComponent(title).stringByAppendingPathExtension("map")
+    {
+        var fileContents = ""
+        
+        do
+        {
+            try fileContents = String(contentsOfFile:filePath, encoding:NSUTF8StringEncoding)
+        }
+        catch
+        {
+            
+        }
+        
+        mapRepresentation = stringToMap(fileContents)
+    }
+    else
+    {
+        print("No map titled: '\(title)' found in user document directory")
+    }
+    
+    return mapRepresentation
+}

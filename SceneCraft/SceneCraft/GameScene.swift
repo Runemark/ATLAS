@@ -44,12 +44,15 @@ class GameScene: SKScene
         // OBLIQUE PYRAMID
         let scene = stringToMap("4x4x4.test$1.1.1.1,1.1.1.1,1.1.1.1,1.1.1.1-1.1.1.0,1.1.1.0,1.1.1.0,0.0.0.0-1.1.0.0,1.1.0.0,0.0.0.0,0.0.0.0-1.0.0.0,0.0.0.0,0.0.0.0,0.0.0.0")!
         
-        let regionMap = scene.decomposeVolume()
+        writeTileMap(scene)
+        let testScene = readTileMap(scene.title)
+        
+//        let regionMap = scene.decomposeVolume()
         
         let visibilityMatrix = scene.visibilityMatrix()
-        let edgeMatrix = scene.exposedEdgeMatrix(visibilityMatrix)
-        let flattenedGrid = scene.flattenedIsoGrid(edgeMatrix)
-        let lineSegments = scene.lineSegmentsForCriticalCorners(flattenedGrid)
+//        let edgeMatrix = scene.exposedEdgeMatrix(visibilityMatrix)
+//        let flattenedGrid = scene.flattenedIsoGrid(edgeMatrix)
+//        let lineSegments = scene.lineSegmentsForCriticalCorners(flattenedGrid)
         
         for x in 0..<scene.grid.xMax
         {
@@ -63,32 +66,6 @@ class GameScene: SKScene
                         sprite.resizeNode(tileWidth, y:tileHeight)
                         let position = screenPositionForTile(Coord(x:Double(x), y:Double(y), z:Double(z)), camera:cameraPosition, tileWidth: tileWidth, tileHeight:tileHeight)
                         sprite.position = position.toPoint() + center
-                        
-                        // FOR OFFICE CHAIR
-                        
-//                        if (regionMap.root.children[0].children[0].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
-//                        {
-//                            sprite.color = UIColor.redColor()
-//                            sprite.colorBlendFactor = 1.0
-//                        }
-                        
-//                        if (regionMap.root.children[4].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
-//                        {
-//                            sprite.color = UIColor.redColor()
-//                            sprite.colorBlendFactor = 1.0
-//                        }
-//                        
-//                        if (regionMap.root.children[5].children[0].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
-//                        {
-//                            sprite.color = UIColor.blueColor()
-//                            sprite.colorBlendFactor = 1.0
-//                        }
-
-//                        if (regionMap.root.children[5].children[0].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
-//                        {
-//                            sprite.color = UIColor.redColor()
-//                            sprite.colorBlendFactor = 1.0
-//                        }
                         
                         self.addChild(sprite)
                     }

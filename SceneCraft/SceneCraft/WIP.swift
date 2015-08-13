@@ -14,7 +14,7 @@ struct Step
     var tile:Int
 }
 
-// Work in Progress
+// Work in Progress (WIP)
 class WIP
 {
     var steps:[Step]
