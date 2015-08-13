@@ -652,28 +652,28 @@ class TileMap
         
         switch (corner)
         {
-        case CornerType.CORNER_U_NW:
-            break
-        case CornerType.CORNER_U_NE:
-            origin.shiftBy(DiscretePosition(x:-1, y:0))
-            break
-        case CornerType.CORNER_U_SE:
-            origin.shiftBy(DiscretePosition(x:-1, y:-1))
-            break
-        case CornerType.CORNER_U_SW:
-            origin.shiftBy(DiscretePosition(x:0, y:-1))
-            break
-        case CornerType.CORNER_D_NW:
-            origin.shiftBy(DiscretePosition(x:+1, y:+1))
-            break
-        case CornerType.CORNER_D_NE:
-            origin.shiftBy(DiscretePosition(x:0, y:+1))
-            break
-        case CornerType.CORNER_D_SE:
-            break
-        case CornerType.CORNER_D_SW:
-            origin.shiftBy(DiscretePosition(x:+1, y:0))
-            break
+            case CornerType.CORNER_U_NW:
+                break
+            case CornerType.CORNER_U_NE:
+                origin.shiftBy(DiscretePosition(x:-1, y:0))
+                break
+            case CornerType.CORNER_U_SE:
+                origin.shiftBy(DiscretePosition(x:-1, y:-1))
+                break
+            case CornerType.CORNER_U_SW:
+                origin.shiftBy(DiscretePosition(x:0, y:-1))
+                break
+            case CornerType.CORNER_D_NW:
+                origin.shiftBy(DiscretePosition(x:+1, y:+1))
+                break
+            case CornerType.CORNER_D_NE:
+                origin.shiftBy(DiscretePosition(x:0, y:+1))
+                break
+            case CornerType.CORNER_D_SE:
+                break
+            case CornerType.CORNER_D_SW:
+                origin.shiftBy(DiscretePosition(x:+1, y:0))
+                break
         }
         
         return origin
@@ -690,24 +690,24 @@ class TileMap
         
         switch (direction)
         {
-        case .FACE_U:
-            oppositeDirection = FaceType.FACE_D
-            break
-        case .FACE_S:
-            oppositeDirection = FaceType.FACE_N
-            break
-        case .FACE_W:
-            oppositeDirection = FaceType.FACE_E
-            break
-        case .FACE_D:
-            oppositeDirection = FaceType.FACE_U
-            break
-        case .FACE_N:
-            oppositeDirection = FaceType.FACE_S
-            break
-        case .FACE_E:
-            oppositeDirection = FaceType.FACE_W
-            break
+            case .FACE_U:
+                oppositeDirection = FaceType.FACE_D
+                break
+            case .FACE_S:
+                oppositeDirection = FaceType.FACE_N
+                break
+            case .FACE_W:
+                oppositeDirection = FaceType.FACE_E
+                break
+            case .FACE_D:
+                oppositeDirection = FaceType.FACE_U
+                break
+            case .FACE_N:
+                oppositeDirection = FaceType.FACE_S
+                break
+            case .FACE_E:
+                oppositeDirection = FaceType.FACE_W
+                break
         }
         
         return oppositeDirection

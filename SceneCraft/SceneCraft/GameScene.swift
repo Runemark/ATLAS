@@ -27,8 +27,8 @@ class GameScene: SKScene
         
         self.backgroundColor = UIColor(red:0.156, green:0.165, blue:0.188, alpha:1.0)
         
-        let tileWidth = CGFloat(25.0)
-        let tileHeight = CGFloat(25.0)
+        let tileWidth = CGFloat(30.0)
+        let tileHeight = CGFloat(30.0)
         
         let cameraPosition = Coord(x:0, y:0, z:0)
         
@@ -36,13 +36,13 @@ class GameScene: SKScene
 //        let scene = stringToMap("3x2x3.test$1.1.1,1.1.1-1.1.1,1.0.1-1.1.1,0.0.0")!
         
         // MEDIUM CHAIR
-        let scene = stringToMap("3x3x6.test$1.0.1,0.0.0,1.0.1-1.0.1,0.0.0,1.0.1-1.1.1,1.1.1,1.1.1-1.1.1,0.0.0,0.0.0-1.1.1,0.0.0,0.0.0-1.1.1,0.0.0,0.0.0")!
+//        let scene = stringToMap("3x3x6.test$1.0.1,0.0.0,1.0.1-1.0.1,0.0.0,1.0.1-1.1.1,1.1.1,1.1.1-1.1.1,0.0.0,0.0.0-1.1.1,0.0.0,0.0.0-1.1.1,0.0.0,0.0.0")!
         
         // OFFICE CHAIR
 //        let scene = stringToMap("5x3x7.test$0.1.0.1.0,0.0.1.0.0,0.1.0.1.0-0.0.0.0.0,0.0.1.0.0,0.0.0.0.0-0.0.0.0.0,0.0.1.0.0,0.0.0.0.0-0.1.1.1.0,0.1.1.1.0,0.1.1.1.0-0.1.1.1.0,1.0.0.0.1,1.0.0.0.1-0.1.1.1.0,0.0.0.0.0,0.0.0.0.0-0.1.1.1.0,0.0.0.0.0,0.0.0.0.0")!
         
         // OBLIQUE PYRAMID
-//        let scene = stringToMap("4x4x4.test$1.1.1.1,1.1.1.1,1.1.1.1,1.1.1.1-1.1.1.0,1.1.1.0,1.1.1.0,0.0.0.0-1.1.0.0,1.1.0.0,0.0.0.0,0.0.0.0-1.0.0.0,0.0.0.0,0.0.0.0,0.0.0.0")!
+        let scene = stringToMap("4x4x4.test$1.1.1.1,1.1.1.1,1.1.1.1,1.1.1.1-1.1.1.0,1.1.1.0,1.1.1.0,0.0.0.0-1.1.0.0,1.1.0.0,0.0.0.0,0.0.0.0-1.0.0.0,0.0.0.0,0.0.0.0,0.0.0.0")!
         
         let regionMap = scene.decomposeVolume()
         
@@ -59,18 +59,18 @@ class GameScene: SKScene
                 {
                     if (scene.grid[x,y,z] > 0 && visibilityMatrix[x,y,z])
                     {
-                        let sprite = SKSpriteNode(imageNamed:"blank.png")
+                        let sprite = SKSpriteNode(imageNamed:"3.png")
                         sprite.resizeNode(tileWidth, y:tileHeight)
                         let position = screenPositionForTile(Coord(x:Double(x), y:Double(y), z:Double(z)), camera:cameraPosition, tileWidth: tileWidth, tileHeight:tileHeight)
                         sprite.position = position.toPoint() + center
                         
                         // FOR OFFICE CHAIR
                         
-                        if (regionMap.root.children[0].children[0].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
-                        {
-                            sprite.color = UIColor.redColor()
-                            sprite.colorBlendFactor = 1.0
-                        }
+//                        if (regionMap.root.children[0].children[0].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
+//                        {
+//                            sprite.color = UIColor.redColor()
+//                            sprite.colorBlendFactor = 1.0
+//                        }
                         
 //                        if (regionMap.root.children[4].region.coordinates.contains(DiscreteCoord(x:x, y:y, z:z)))
 //                        {
@@ -96,32 +96,35 @@ class GameScene: SKScene
             }
         }
         
-        let path:CGMutablePathRef = CGPathCreateMutable()
-        let lines = SKShapeNode(path:path)
+//        let path:CGMutablePathRef = CGPathCreateMutable()
+//        let lines = SKShapeNode(path:path)
+//        
+//        for line in lineSegments
+//        {
+//            let iso_a = line.a
+//            let iso_b = line.b
+//            
+//            let projected_a = Coord(x:Double(iso_a.x), y:Double(iso_a.y), z:Double(scene.grid.zMax))
+//            let projected_b = Coord(x:Double(iso_b.x), y:Double(iso_b.y), z:Double(scene.grid.zMax))
+//            
+//            let screen_a = screenPositionForTile(projected_a, camera:cameraPosition, tileWidth:tileWidth, tileHeight:tileHeight)
+//            let screen_b = screenPositionForTile(projected_b, camera:cameraPosition, tileWidth:tileWidth, tileHeight:tileHeight)
+//            
+//            let a_position = screen_a.toPoint() + center
+//            let b_position = screen_b.toPoint() + center
+//            
+//            // Draw the line between points a and b
+//            CGPathMoveToPoint(path, nil, a_position.x, a_position.y)
+//            CGPathAddLineToPoint(path, nil, b_position.x, b_position.y)
+//        }
+//        
+//        lines.path = path
+//        lines.strokeColor = UIColor(red:0.247, green:0.255, blue:0.275, alpha:1.0)
+////        lines.strokeColor = UIColor.blackColor()
+//        lines.lineWidth = 0.1
+//        self.addChild(lines)
         
-        for line in lineSegments
-        {
-            let iso_a = line.a
-            let iso_b = line.b
-            
-            let projected_a = Coord(x:Double(iso_a.x), y:Double(iso_a.y), z:Double(scene.grid.zMax))
-            let projected_b = Coord(x:Double(iso_b.x), y:Double(iso_b.y), z:Double(scene.grid.zMax))
-            
-            let screen_a = screenPositionForTile(projected_a, camera:cameraPosition, tileWidth:tileWidth, tileHeight:tileHeight)
-            let screen_b = screenPositionForTile(projected_b, camera:cameraPosition, tileWidth:tileWidth, tileHeight:tileHeight)
-            
-            let a_position = screen_a.toPoint() + center
-            let b_position = screen_b.toPoint() + center
-            
-            // Draw the line between points a and b
-            CGPathMoveToPoint(path, nil, a_position.x, a_position.y)
-            CGPathAddLineToPoint(path, nil, b_position.x, b_position.y)
-        }
         
-        lines.path = path
-        lines.strokeColor = UIColor(red:0.247, green:0.255, blue:0.275, alpha:1.0)
-        lines.lineWidth = 0.1
-        self.addChild(lines)
         
 //        for x in 0..<flattenedGrid.xMax
 //        {

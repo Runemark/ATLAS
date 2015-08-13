@@ -42,7 +42,7 @@ struct AbstractProportions
 }
 
 // Arbitrary Granularity
-// Both components and not-components
+    // Both components and not-components
 // Overlapping Substructures
 
 class AbstractShape
@@ -65,15 +65,15 @@ class AbstractShape
     {
         switch (constrainedAxis)
         {
-        case AbstractAxis.SIDE_A:
-            proportions.sideA = AbstractProportion.PROP_FLAT
-            break
-        case AbstractAxis.SIDE_B:
-            proportions.sideB = AbstractProportion.PROP_FLAT
-            break
-        case AbstractAxis.SIDE_C:
-            proportions.sideC = AbstractProportion.PROP_FLAT
-            break
+            case AbstractAxis.SIDE_A:
+                proportions.sideA = AbstractProportion.PROP_FLAT
+                break
+            case AbstractAxis.SIDE_B:
+                proportions.sideB = AbstractProportion.PROP_FLAT
+                break
+            case AbstractAxis.SIDE_C:
+                proportions.sideC = AbstractProportion.PROP_FLAT
+                break
         }
     }
 }
@@ -98,8 +98,8 @@ class AbstractShape
 // IT DEVELOPS ITS OWN FUNCTION FOR PERFORMING THAT TASK
 // What should I do next?
 // I want this big thing. So I'll make a small thing and cover it over to make it bigger.
-// Where to put the core? How bout here?
-// Now let's cover it up.
+    // Where to put the core? How bout here?
+    // Now let's cover it up.
 
 // There are only 3 types of shapes in the world:
 // 1. Generic Shape
